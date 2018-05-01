@@ -36,8 +36,8 @@ $form = ActiveForm::begin([
     'id' => 'login-form',
     'options' => ['class' => 'form-horizontal'],
 ]) ?>
-    <?= $form->field($slider, 'title') ?>
-    <?= $form->field($slider, 'date')->widget(
+    <?= $form->field($gallery, 'title') ?>
+    <?= $form->field($gallery, 'date')->widget(
     DatePicker::className(), [
         'addon' => false,
         'size' => 'sm',

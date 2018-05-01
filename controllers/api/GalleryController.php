@@ -1,13 +1,13 @@
 <?php
 
-namespace kouosl\slider\controllers\api;
+namespace kouosl\gallery\controllers\api;
 
-use kouosl\slider\models\Slider;
+use kouosl\gallery\models\Gallery;
 use Yii;
 
-class SliderController extends DefaultController {
+class GalleryController extends DefaultController {
 	
-	public $modelClass = 'kouosl\slider\models\Slider';
+	public $modelClass = 'kouosl\gallery\models\Gallery';
 	
 	public function actions() {
 		$actions = parent::actions ();
@@ -17,7 +17,7 @@ class SliderController extends DefaultController {
 	
 	public function actionView($id){
 
-		$model = Slider::findOne($id);
+		$model = Gallery::findOne($id);
 		
 		if(!$model)
 			return ['status' => '404','message' => 'Not Found'];
@@ -26,14 +26,14 @@ class SliderController extends DefaultController {
 	}
 	
 	public function actionIndex(){
-		return Slider::find()->all();
+		return Gallery::find()->all();
 	}
 	
 	public function actionCreate(){
 
 		$postParams = yii::$app->request->post();
 		
-		$model = new Slider();
+		$model = new Gallery();
 	
 		
 		if($model->load($postParams,'') && $model->validate()){
@@ -51,7 +51,7 @@ class SliderController extends DefaultController {
 
 		$postParams = yii::$app->request->post();
 		
-		$model = Slider::findOne($id);
+		$model = Gallery::findOne($id);
 
 		if($model = $this->LoadModel($model, $postParams)){
 				if($model->save())
@@ -64,7 +64,7 @@ class SliderController extends DefaultController {
 	
 	public function actionDelete($id){
 		
-		if(Slider::findOne($id)->delete())
+		if(Gallery::findOne($id)->delete())
 			return ['status' => 1];
 		else
 			return ['stauts' => 100];

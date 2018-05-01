@@ -1,15 +1,15 @@
 <?php
 
-namespace kouosl\slider\models;
+namespace kouosl\gallery\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 
 /**
- * SliderSearch represents the model behind the search form about `app\modules\slider\models\Slider`.
+ * GallerySearch represents the model behind the search form about `app\modules\gallery\models\Gallery`.
  */
-class SliderSearch extends Slider
+class GallerySearch extends Gallery
 {
     /**
      * @inheritdoc
@@ -40,7 +40,7 @@ class SliderSearch extends Slider
      */
     public function search($params)
     {
-        $query = slider::find();
+        $query = gallery::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,

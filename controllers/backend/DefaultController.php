@@ -1,17 +1,17 @@
 <?php
 
-namespace kouosl\slider\controllers\backend;
+namespace kouosl\gallery\controllers\backend;
 
-use kouosl\slider\models\SLider;
+use kouosl\gallery\models\SLider;
 
 class DefaultController extends \kouosl\base\controllers\backend\BaseController
 {
     
     public function actionIndex()
     {
-        $slider = new Slider();
+        $gallery = new Gallery();
         return $this->render('index', [
-            'slider' => $slider,
+            'gallery' => $gallery,
         ]);
     }
 }

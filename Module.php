@@ -1,6 +1,6 @@
 <?php
 
-namespace kouosl\slider;
+namespace kouosl\gallery;
 use Yii;
 use yii\filters\auth\CompositeAuth;
 use yii\filters\auth\HttpBasicAuth;
@@ -57,16 +57,16 @@ class Module extends \kouosl\base\Module
         Yii::$app->i18n->translations['site/*'] = [
             'class' => 'yii\i18n\PhpMessageSource',
             'sourceLanguage' => 'en-US',
-            'basePath' => '@kouosl/slider/messages',
+            'basePath' => '@kouosl/gallery/messages',
             'fileMap' => [
-                'slider/slider' => 'slider.php',
+                'gallery/gallery' => 'gallery.php',
             ],
         ];
     }
 
     public static function t($category, $message, $params = [], $language = null)
     {
-        return Yii::t('slider/' . $category, $message, $params, $language);
+        return Yii::t('gallery/' . $category, $message, $params, $language);
     }
 
     public static function initRules(){
@@ -75,7 +75,7 @@ class Module extends \kouosl\base\Module
             [
                 'class' => 'yii\rest\UrlRule',
                 'controller' => [
-                    'slider/sliders',
+                    'gallery/gallerys',
                 ],
                 'tokens' => [
                     '{id}' => '<id:\\w+>'

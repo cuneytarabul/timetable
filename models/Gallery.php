@@ -1,25 +1,25 @@
 <?php
 
-namespace kouosl\slider\models;
+namespace kouosl\gallery\models;
 
 use Yii;
 
 /**
- * This is the model class for table "slider".
+ * This is the model class for table "gallery".
  *
  * @property int $id
  * @property string $title
  * @property string $description
  * @property string $date
  */
-class Slider extends \yii\db\ActiveRecord
+class Gallery extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'slider';
+        return 'gallery';
     }
 
     /**

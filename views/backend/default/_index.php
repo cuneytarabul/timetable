@@ -2,7 +2,7 @@
 use kouosl\theme\helpers\Html;
 use kouosl\theme\widgets\Portlet;
 
-$this->title = 'Slider';
+$this->title = 'Gallery';
 $data['title'] = Html::encode($this->title);
 $this->params['breadcrumbs'][] = $this->title;
 

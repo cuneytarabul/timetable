@@ -1,12 +1,12 @@
 <?php
 
-namespace kouosl\slider\controllers\backend;
+namespace kouosl\gallery\controllers\backend;
 
-use kouosl\slider\models\SliderData;
-use kouosl\slider\models\UploadImage;
+use kouosl\gallery\models\GalleryData;
+use kouosl\gallery\models\UploadImage;
 use Yii;
-use kouosl\slider\models\Slider;
-use kouosl\slider\models\SliderSearch;
+use kouosl\gallery\models\Gallery;
+use kouosl\gallery\models\GallerySearch;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UnauthorizedHttpException;
@@ -15,9 +15,9 @@ use yii\web\UploadedFile;
 use yii\filters\AccessControl;
 use yii\data\ActiveDataProvider;
 /**
- * SliderController implements the CRUD actions for Slider model.
+ * GalleryController implements the CRUD actions for Gallery model.
  */
-class SliderController extends DefaultController
+class GalleryController extends DefaultController
 {
     public function behaviors()
     {
@@ -46,14 +46,14 @@ class SliderController extends DefaultController
     	parent::init();
     }
 
-    public function actionSlider(){
+    public function actionGallery(){
         $provider = new ActiveDataProvider([
-            'query' => Slider::find(),
+            'query' => Gallery::find(),
             'pagination' => [
                 'pagesize' => 2,
             ],
         ]);
-        return $this->render('_slider', [
+        return $this->render('_gallery', [
             'dataProvider' => $provider,
         ]);
     }
@@ -63,7 +63,7 @@ class SliderController extends DefaultController
     }
 
     /**
-     * Lists all Slider models.
+     * Lists all Gallery models.
      * @return mixed
      */
     public function actionManage()
@@ -71,7 +71,7 @@ class SliderController extends DefaultController
     	
 
     	
-        $searchModel = new SliderSearch();
+        $searchModel = new GallerySearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('_manage', [
@@ -81,7 +81,7 @@ class SliderController extends DefaultController
     }
 
     /**
-     * Displays a single Slider model.
+     * Displays a single Gallery model.
      * @param integer $id
      * @return mixed
      */
@@ -95,7 +95,7 @@ class SliderController extends DefaultController
     }
 
     /**
-     * Creates a new Slider model.
+     * Creates a new Gallery model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
@@ -103,7 +103,7 @@ class SliderController extends DefaultController
     {
 
     	
-        $model = new Slider();
+        $model = new Gallery();
 
         $uploadImage = new UploadImage();
 
@@ -115,7 +115,7 @@ class SliderController extends DefaultController
 
             if(!$model->save()){
 
-                yii::$app->session->setFlash('flashMessage', ['type' => 'error', 'message' => Module::t('slider', 'Slider Not Saved' )]);
+                yii::$app->session->setFlash('flashMessage', ['type' => 'error', 'message' => Module::t('gallery', 'Gallery Not Saved' )]);
 
                 return $this->render('_create', ['model' => $model]); // error
             }
@@ -132,7 +132,7 @@ class SliderController extends DefaultController
     }
 
     /**
-     * Updates an existing Slider model.
+     * Updates an existing Gallery model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -156,7 +156,7 @@ class SliderController extends DefaultController
 
             if(!$model->save()){
 
-                yii::$app->session->setFlash('flashMessage', ['type' => 'error', 'message' => Module::t('slider', 'Slider Not Saved' )]);
+                yii::$app->session->setFlash('flashMessage', ['type' => 'error', 'message' => Module::t('gallery', 'Gallery Not Saved' )]);
 
                 return $this->render('_update', ['model' => $model]); // error
             }
@@ -173,7 +173,7 @@ class SliderController extends DefaultController
     }
 
     /**
-     * Deletes an existing Slider model.
+     * Deletes an existing Gallery model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -181,7 +181,7 @@ class SliderController extends DefaultController
     public function actionDelete($id)
     {
 
-        SliderData::deleteAll(['slider_id' => $id]);
+        GalleryData::deleteAll(['gallery_id' => $id]);
 
         $model = $this->findModel($id);
 
@@ -196,15 +196,15 @@ class SliderController extends DefaultController
     }
 
     /**
-     * Finds the Slider model based on its primary key value.
+     * Finds the Gallery model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Slider the loaded model
+     * @return Gallery the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Slider::findOne($id)) !== null) {
+        if (($model = Gallery::findOne($id)) !== null) {
 
             return $model;
 

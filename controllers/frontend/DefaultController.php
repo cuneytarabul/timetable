@@ -1,6 +1,6 @@
 <?php
 
-namespace kouosl\slider\controllers\frontend;
+namespace kouosl\gallery\controllers\frontend;
 
 
 class DefaultController extends \kouosl\base\controllers\backend\BaseController
