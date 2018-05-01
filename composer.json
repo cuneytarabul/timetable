@@ -14,8 +14,5 @@
         "psr-4": {
             "kouosl\\gallery\\": ""
         }
-    },
-    "require": {
-        "nex/yii2-datepicker": "dev-master"
     }
 }
