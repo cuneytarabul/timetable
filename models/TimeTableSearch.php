@@ -1,15 +1,15 @@
 <?php
 
-namespace kouosl\gallery\models;
+namespace kouosl\timetable\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 
 /**
- * GallerySearch represents the model behind the search form about `app\modules\gallery\models\Gallery`.
+ * TimeTableSearch represents the model behind the search form about `app\modules\timetable\models\TimeTable`.
  */
-class GallerySearch extends Gallery
+class TimeTableSearch extends TimeTable
 {
     /**
      * @inheritdoc
@@ -40,7 +40,7 @@ class GallerySearch extends Gallery
      */
     public function search($params)
     {
-        $query = gallery::find();
+        $query = timetable::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,

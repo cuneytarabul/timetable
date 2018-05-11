@@ -1,17 +1,17 @@
 <?php
 
-namespace kouosl\gallery\controllers\backend;
+namespace kouosl\timetable\controllers\backend;
 
-use kouosl\gallery\models\SLider;
+use kouosl\timetable\models\SLider;
 
 class DefaultController extends \kouosl\base\controllers\backend\BaseController
 {
     
     public function actionIndex()
     {
-        $gallery = new Gallery();
+        $timetable = new TimeTable();
         return $this->render('index', [
-            'gallery' => $gallery,
+            'timetable' => $timetable,
         ]);
     }
 }

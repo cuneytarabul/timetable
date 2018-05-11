@@ -13,7 +13,7 @@ class m130524_201442_sample extends Migration
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
 
-        $this->createTable('{{%gallery}}', [
+        $this->createTable('{{%timetable}}', [
             'id' => $this->primaryKey(),
             'title' => $this->string(200)->notNull(),
             'description' => $this->text()->notNull(),

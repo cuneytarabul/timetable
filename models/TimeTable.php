@@ -1,25 +1,25 @@
 <?php
 
-namespace kouosl\gallery\models;
+namespace kouosl\timetable\models;
 
 use Yii;
 
 /**
- * This is the model class for table "gallery".
+ * This is the model class for table "timetable".
  *
  * @property int $id
  * @property string $title
  * @property string $description
  * @property string $date
  */
-class Gallery extends \yii\db\ActiveRecord
+class TimeTable extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'gallery';
+        return 'timetable';
     }
 
     /**
